@@ -15,14 +15,15 @@ We can exploit this vulnerability to intercept and capture NTLMv2 hashes by leve
 
 To begin intercepting LLMNR traffic, we first need to set up **Responder** on our Kali machine:
 `sudo responder -I eth0 -dw`
-![](Images/Pasted%20image%2020250212172006.png)
+![image](https://github.com/user-attachments/assets/2bc1c9b0-4a7a-413c-80ce-481708be4f6f)
+
 This command sets up Responder to listen on the local interface (`eth0`), with flags for **DHCP** and **Wpad**.
 
 **2. Generate LLMNR Traffic:**
-On the virtual machine (WS-01) with IP address `192.168.163.10`, we log in as a normal user (e.g., `j.smith`). We will then attempt to navigate to our malicious host (`192.168.163.15`).
+On the virtual machine (WS-01) with IP address `192.168.163.10`, we log in as a normal user (e.g., `j.smith`). We will then attempt to navigate to our malicious host (`192.168.163.15`) via file explorer.
 
 As a result, Responder intercepts the LLMNR request, capturing the NTLMv2 hash for `j.smith`.
-![](Images/Pasted%20image%2020250212172108.png)
+![image](https://github.com/user-attachments/assets/c47bffeb-9547-4b55-9b57-1ffa1866fc4d)
 
 ---
 
