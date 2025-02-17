@@ -4,6 +4,10 @@ IPv6 attacks are similar to traditional relaying attacks but tend to be more rel
 By listening for all IPv6 traffic and spoofing as a DNS server, attackers can act as a middleman (MitM) for IPv6 communication. This allows them to authenticate to the domain controller via LDAP or SMB. Notably, the attacker doesn't need administrative privileges to gather valuable information—unlike in SMB Relay attacks.
 
 In this guide, we will use **Mitm6** alongside **ntlmrelayx** to perform a relay attack.
+
+---
+
+## **Lab Setup:**
 ### Step 1: Prepare the Mitm6 Command
 First, open a terminal and prepare to run Mitm6 with the following command: `sudo mitm6 -d quigley.local
 
@@ -71,7 +75,9 @@ Looking at the domain controller, we can see that the newly created account is a
 ![Pasted image 20250217175601](https://github.com/user-attachments/assets/9374e1f9-043b-4722-8de9-66b79dff8ff7)
 
 
-## Mitigation Strategies
+---
+
+## **Mitigation:**
 
 To protect against IPv6 poisoning and similar relay attacks, consider the following mitigation strategies:
 
