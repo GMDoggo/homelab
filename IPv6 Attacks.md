@@ -16,7 +16,8 @@ First, open a terminal and prepare to run Mitm6 with the following command: `sud
 - `-wh` points to the WPAD (Web Proxy Auto-Discovery Protocol) URL.
 - `-l` specifies the folder where looted information will be saved.
 
-![Command Execution](../../../Images/Pasted%20image%2020250217172438.png)
+![Pasted image 20250217172438](https://github.com/user-attachments/assets/43df7b27-cfe5-4f35-a38f-7449d8bf49cb)
+
 
 After running this command, switch back to the terminal running Mitm6.
 
@@ -26,25 +27,29 @@ After running this command, switch back to the terminal running Mitm6.
 
 From the `ntlmrelayx` terminal, you can monitor successful authentications to the domain controller.
 
-![Successful Authentications](../../../Images/Pasted%20image%2020250217172746.png)
+![Pasted image 20250217172746](https://github.com/user-attachments/assets/9026fb37-5cf8-430d-9340-08ffffa12526)
+
 
 ### Step 4: Explore the Loot
 
 When you open the `lootme` folder, you'll find files generated from the LDAP domain dump.
 
-![LDAP Domain Dump](../../../Images/Pasted%20image%2020250217172932.png)
+![Pasted image 20250217172932](https://github.com/user-attachments/assets/226700ed-0736-42c9-ba77-009996f0b00f)
+
 
 #### Domain Computers
 
 Opening the HTML file for domain computers will show all devices within the domain.
 
-![Domain Computers](../../../Images/Pasted%20image%2020250217173046.png)
+![Pasted image 20250217173046](https://github.com/user-attachments/assets/78987196-f9a2-4a9d-8cf6-512b90d3ca88)
+
 
 #### Domain Users
 
 Similarly, opening the domain users file reveals user accounts. Below, we see an example where a domain admin left a password in a description, mistakenly believing it couldn't be seen.
 
-![Domain Admin Password](../../../Images/Pasted%20image%2020250217173338.png)
+![Pasted image 20250217173117](https://github.com/user-attachments/assets/2debf6c7-0e12-4f4d-a8b3-5e0dd63f6094)
+
 
 Some columns may contain additional useful information, such as accounts that have never been logged into—potentially indicating a honeypot account that attackers should avoid.
 
@@ -54,15 +59,17 @@ Notably, our high-value users include **SQLService** and **R.Quigley**.
 
 Next, simulate an administrator logging in locally to one of the workstations. Upon logon, we successfully authenticate to the domain controller as a Domain Admin account.
 
-![Domain Admin Authentication](../../../Images/Pasted%20image%2020250217175352.png)
+![Pasted image 20250217175352](https://github.com/user-attachments/assets/e7540563-50b6-4269-aec0-d804a85ea30f)
 
 When this happens, `ntlmrelayx` automatically generates a new account for us.
 
-![Account Creation](../../../Images/Pasted%20image%2020250217175427.png)
+![Pasted image 20250217175427](https://github.com/user-attachments/assets/b08e4ad3-198c-439b-8ffd-e533a0298543)
+
 
 Looking at the domain controller, we can see that the newly created account is a member of the **Enterprise Admins** group, allowing us to run **secretsdump** against the domain.
 
-![Enterprise Admins Account](../../../Images/Pasted%20image%2020250217175601.png)
+![Pasted image 20250217175601](https://github.com/user-attachments/assets/9374e1f9-043b-4722-8de9-66b79dff8ff7)
+
 
 ## Mitigation Strategies
 
