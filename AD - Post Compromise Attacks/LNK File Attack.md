@@ -30,7 +30,8 @@ You can also add special characters to the filename to ensure it appears at the 
 
 Once the malicious file is generated, it can be uploaded to any accessible file share within the environment, provided the attacker has sufficient privileges.
 
-![](../../../Images/Pasted%20image%2020250224171214.png)
+![Pasted image 20250224171214](https://github.com/user-attachments/assets/73b353f0-4870-4eb8-ab08-8d4e5f27639b)
+
 
 ### 3. Run Responder to Capture Hashes
 
@@ -42,7 +43,8 @@ sudo responder -I eth0 -dP
 
 When a user clicks on the malicious file from their workstation, Responder will capture the hash.
 
-![](../../../Images/Pasted%20image%2020250224171724.png)
+![Pasted image 20250224171724](https://github.com/user-attachments/assets/5cab3693-0cc3-4354-9a50-bf6e8688d911)
+
 
 ### 4. Automate the Attack with NetExec
 
