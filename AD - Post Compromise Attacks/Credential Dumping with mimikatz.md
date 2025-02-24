@@ -27,7 +27,8 @@ First, transfer Mimikatz to the Windows host. For example, you can spin up a sim
 Run the following command on your machine:
 `python3 -m http.server 80`
 
-![](../../../Images/Pasted%20image%2020250224173153.png)
+![Pasted image 20250224173153](https://github.com/user-attachments/assets/21c28bc5-0dd5-4dea-943c-d7c9082ca2f1)
+
 
 ### Step 2: Open Mimikatz in an Administrative Command Prompt
 
@@ -41,7 +42,8 @@ On the Windows host:
     
     `mimikatz.exe`
 
-![](../../../Images/Pasted%20image%2020250224173519.png)
+![Pasted image 20250224173519](https://github.com/user-attachments/assets/e1f2f044-4188-409b-8919-3a000500a4c4)
+
 
 ### Step 3: Set Privilege to Debug
 
@@ -49,7 +51,8 @@ Before dumping credentials, Mimikatz requires **debug privileges**. Run the foll
 
 `privilege::debug`
 
-![](../../../Images/Pasted%20image%2020250224173640.png)
+![Pasted image 20250224173640](https://github.com/user-attachments/assets/5c14bd73-2d0b-4020-b547-7e4f9a8e1bae)
+
 
 ### Step 4: Explore Sekurlsa Module
 
@@ -57,7 +60,8 @@ The `sekurlsa` module is used for extracting credentials from memory. You can vi
 
 `sekurlsa::`
 
-![](../../../Images/Pasted%20image%2020250224173736.png)
+![Pasted image 20250224173736](https://github.com/user-attachments/assets/2614f23c-b568-4580-9745-c64ab22ef04a)
+
 
 Many of these functionalities overlap with other tools such as `secretsdump.py`.
 
