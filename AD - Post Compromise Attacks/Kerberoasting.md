@@ -27,7 +27,8 @@ The Kerberos hash is stored in a text file (e.g., `krb.txt`). To crack the hash,
 
 **Result:** If successful, `hashcat` will output the cracked password, revealing sensitive information.
 
-![](../../Images/Pasted%20image%2020250221230529.png)
+![Pasted image 20250221230529](https://github.com/user-attachments/assets/afdaedbc-166c-4b34-ae76-a19986875528)
+
 
 #### 4. **Mitigation Strategies**
 
